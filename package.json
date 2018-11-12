@@ -1,0 +1,20 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "npm t -- -w",
+        "test": "eslint **/*.js && ava **/*.test.js -v"
+    },
+    "dependencies": {
+        "ava": "^1.0.0-rc.1",
+        "chai": "^4.2.0",
+        "node-fetch": "^2.2.0",
+        "winston": "^3.1.0"
+    },
+    "devDependencies": {
+        "browser-env": "^3.2.5",
+        "eslint": "^5.9.0",
+        "eslint-config-vi": "^9.2.0",
+        "esm": "^3.0.84",
+        "sinon": "^7.1.1"
+    }
+}
