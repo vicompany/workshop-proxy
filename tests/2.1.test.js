@@ -5,7 +5,7 @@ import answer from '../answers/2.1';
 import exercise from '../exercises/2.1';
 
 const EXERCISE_FILE = `${__dirname}/../exercises/2.1.js`;
-const EXERCISE_FILE_HASH = 'f07d9942fee29127e1c8afe99b450d80';
+const EXERCISE_FILE_HASH = 'e98111f981f105629dc29e3bdee1f82e';
 
 const isFileUpdated = () => EXERCISE_FILE_HASH !== getFileHash(EXERCISE_FILE);
 

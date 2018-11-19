@@ -72,3 +72,17 @@ test('Exercise 2.2 logs class method invocations', (t) => {
 		t.true(t.context.loggers.exercise.log.calledOnce);
 	}
 });
+
+test('Exercise 2.2 does not log class method lookups', (t) => {
+	const proxyAnswer = answer(new MyClass('dave'), t.context.loggers.answer);
+
+	proxyAnswer.greet; // eslint-disable-line no-unused-expressions
+	t.true(t.context.loggers.answer.log.notCalled);
+
+	if (isFileUpdated()) {
+		const proxyExercise = exercise(new MyClass('dave'), t.context.loggers.exercise);
+
+		proxyExercise.greet; // eslint-disable-line no-unused-expressions
+		t.true(t.context.loggers.exercise.log.notCalled);
+	}
+});

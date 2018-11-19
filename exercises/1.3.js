@@ -12,8 +12,8 @@ module.exports = (fn) => {
 			return cache.get(key);
 		}
 
-		// eslint-disable-next-line prefer-spread
-		const returnValue = fn.apply(null, args);
+		// eslint-disable-next-line no-undefined, prefer-spread
+		const returnValue = fn.apply(undefined, args);
 
 		cache.set(key, returnValue);
 

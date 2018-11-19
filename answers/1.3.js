@@ -12,7 +12,8 @@ module.exports = (fn) => {
 			return cache.get(key);
 		}
 
-		const returnValue = Reflect.apply(fn, null, args);
+		// eslint-disable-next-line no-undefined
+		const returnValue = Reflect.apply(fn, undefined, args);
 
 		cache.set(key, returnValue);
 

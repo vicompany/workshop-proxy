@@ -10,6 +10,7 @@ module.exports = ruleset => (field, value) => {
 
 	// Get errors from all rules
 	return Reflect.get(ruleset, field)
-		.map(rule => rule(value))
+		// eslint-disable-next-line no-undefined
+		.map(rule => Reflect.apply(rule, undefined, [value]))
 		.filter(rule => rule !== null);
 };
